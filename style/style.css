@@ -1103,6 +1103,9 @@ input:focus {
     left: 0;
     top: 55px;
 }
+#range:focus {
+    border: none;
+}
 
 input:required {
     border: 1px solid #FF3A3A;
