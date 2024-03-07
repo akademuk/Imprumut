@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="img/Favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.5/build/css/intlTelInput.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/reset.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <title>Împrumut rapid</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="wrapper">
+        <a href="#">
+          <img src="img/Logo.svg" alt="Швидкий кредит" />
+        </a>
+        <div class="header__line"></div>
+        <button id="Intrare">Intrare</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div class="wrapper">
+          <div class="hero__calculator">
+            <form action="" id="calculatorForm">
+              <div class="form__sum">
+                <p>Selectați suma:</p>
+                <div class="form__result-box">
+                  <p id="sum">0 zi</p>
+                  <p id="percent">91 zi</p>
+                </div>
+              </div>
+              <div class="form__range">
+                <p
+                  id="minus"
+                  onclick="changeRange(-100)"
+                  style="cursor: pointer"
+                >
+                  <img src="img/minus.svg" alt="minus" />
+                </p>
+                <input
+                  type="range"
+                  name="range"
+                  id="range"
+                  min="0"
+                  max="10000"
+                  value="100"
+                  oninput="updateSummary()"
+                  step="100"
+                />
+                <p id="plus" onclick="changeRange(100)" style="cursor: pointer">
+                  <img src="img/plus.svg" alt="plus" />
+                </p>
+              </div>
+              <div class="form__data">
+                <p>Înregistrare:</p>
+                <span id="message__error"
+                  >A avut loc o eroare. Vă rugăm să încercați din nou</span
+                >
+                <input type="text" name="imię" id="name" placeholder="imię" />
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  placeholder="(000) 000-00-00"
+                />
+                <div class="recaptcha">
+                  <img src="img/recaptcha.png" alt="recaptcha" />
+                </div>
+                <div class="form__result">
+                  <p>Returnează împrumutul:</p>
+                  <p id="allSum">1 800,18 zi</p>
+                </div>
+              </div>
+              
+              <button type="button" id="formBtn">
+                Weż
+                <span>3000</span>
+                zi
+              </button>
+            </form>
+            <p>
+              Înregistrându-vă în serviciul nostru, sunteți de acord
+              <a href="#"
+                >cu acordul utilizatorului și regulile de utilizare a
+                serviciului</a
+              >
+            </p>
+          </div>
+          <div class="hero__image">
+            <img width="671" height="604" src="img/hero__img.png" alt="Image" />
+          </div>
+        </div>
+      </section>
+
+      <section class="suntem">
+        <div class="wrapper">
+          <div class="suntem__tittle">
+            <h2>DE CE SUNTEM MAI BUNI?</h2>
+            <p>
+              Suntem un nou serviciu de creditare care a colectat pentru dvs.
+              cele mai bune condiții de credit online - la 0,01% pentru 91 de
+              zile!
+            </p>
+          </div>
+          <div class="suntem__main">
+            <article class="suntem__main-item">
+              <div class="suntem__main-item-img">
+                <img
+                  width="230"
+                  height="230"
+                  src="img/suntem__main-item1.svg"
+                  alt="Împrumut instantaneu."
+                />
+              </div>
+              <h3>Împrumut instantaneu.</h3>
+              <p>
+                Bani pe cardul oricărei bănci fără garanții de proprietate și
+                documente inutile
+              </p>
+            </article>
+
+            <article class="suntem__main-item">
+              <div class="suntem__main-item-img">
+                <img
+                  width="230"
+                  height="230"
+                  src="img/suntem__main-item2.svg"
+                  alt="Împrumut instantaneu."
+                />
+              </div>
+              <h3>Confirmare de la distanță.</h3>
+              <p>
+                Nu necesitam o vizita personala, decizia se ia exclusiv de la
+                distanta
+              </p>
+            </article>
+
+            <article class="suntem__main-item">
+              <div class="suntem__main-item-img">
+                <img
+                  width="230"
+                  height="230"
+                  src="img/suntem__main-item3.svg"
+                  alt="Împrumut instantaneu."
+                />
+              </div>
+              <h3>Cel mai bun rating.</h3>
+              <p>
+                Echipa noastră este interesată să selecteze cele mai bune
+                companii pe baza ratingului de emitere și acceptare a cererilor
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="aplica">
+        <div class="wrapper">
+          <div class="aplica__left">
+            <h2>APLICĂ!</h2>
+            <p>
+              Și obțineți un împrumut online pe cardul dvs. cu un singur clic
+            </p>
+            <button>A LUA BANI!</button>
+          </div>
+          <div class="aplica__right">
+            <img width="383" height="354px" src="img/Groshi.png" alt="Groshi" />
+          </div>
+        </div>
+      </section>
+
+      <section class="solicitarea">
+        <div class="wrapper">
+          <div class="solicitarea__top">
+            <h2>Solicitarea unui împrumut</h2>
+            <div class="solicitarea__top-text">
+              <p>Puteți obține un împrumut online fără a părăsi casa.</p>
+              <p>
+                Locația ta nu contează; este suficient să ai un computer,
+                smartphone sau tabletă cu acces la Internet.
+              </p>
+              <p>Cererea de împrumut se completează după cum urmează:</p>
+              <ul>
+                <li>
+                  Selectați suma împrumutului folosind calculatorul nostru
+                  online.
+                </li>
+                <li>Completați formularul de pe site.</li>
+                <li>
+                  Dacă cererea dvs. este aprobată, primiți instantaneu bani
+                  într-un mod convenabil pentru dvs.
+                </li>
+              </ul>
+              <p>
+                Valoarea și termenul împrumutului, rata dobânzii pe care
+                partenerii noștri o oferă împrumutatului depind de durata
+                cooperării și de alți factori.
+              </p>
+              <p>
+                Clienții noștri pot fi siguri de confidențialitatea lor: toate
+                datele personale sunt protejate în siguranță și stocate de
+                serviciu în formă criptată.
+              </p>
+              <p>
+                Vă ajutăm să găsiți microcredite profitabile 24/7, transferurile
+                sunt trimise către sistemele de plată instantaneu, la orice oră
+                din zi sau din noapte.
+              </p>
+            </div>
+          </div>
+          <div class="solicitarea__bottom">
+            <div class="solicitarea__bottom-contact">
+              <div class="solicitarea__bottom-contact-img">
+                <img
+                  width="70"
+                  height="52"
+                  src="img/Logo_Visa.svg"
+                  alt="Visa"
+                />
+                <img
+                  width="59"
+                  height="44"
+                  src="img/Logo_MasterCard.svg"
+                  alt="MasterCard"
+                />
+              </div>
+              <address>
+                <p>Contacte:</p>
+                <a href="tel:+48732054143">+48732054143</a>
+                <p>ul.Popularna, 02-473 Warszawa.</p>
+                <a href="mailto:">info@fastmoney-ro.com</a>
+              </address>
+            </div>
+            <button class="solicitarea__btn">Sus</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="footer__top">
+          <div class="footer__top-img">
+            <a href="#">
+              <img src="img/Logo-black.svg" alt="Împrumut rapid" />
+            </a>
+          </div>
+          <div class="footer__top-social">
+            <p>Contacte:</p>
+            <div>
+              <a href="#">
+                <img
+                  width="31"
+                  height="31"
+                  src="img/Facebook.svg"
+                  alt="Facebook"
+                />
+              </a>
+              <a href="#">
+                <img width="31" height="34" src="img/Viber.svg" alt="Viber" />
+              </a>
+            </div>
+          </div>
+          <form action="" class="footer__form">
+            <p>Abonament:</p>
+            <div class="footer__form-box">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="mail0@example.com"
+              />
+              <input type="submit" value="Trimite" id="sub" />
+            </div>
+          </form>
+        </div>
+        <div class="footer__main">
+          <div class="footer__main-text">
+            Site-ul nu oferă clienților servicii plătite de produse de credit,
+            ci mai degrabă oferă clientului o listă de oferte de la instituțiile
+            de credit și organizațiile financiare non credit pe care clientul le
+            poate contacta pentru a completa o cerere pentru un produs de
+            credit. <br />
+             Proiectul nu este o bancă sau un creditor, nu aparține
+            instituțiilor financiare și nu este responsabil pentru consecințele
+            oricăror contracte de creditare sau garanții încheiate la acesta.
+            Rata minimă a dobânzii pentru unii parteneri este de 0,01%. <br />
+             Pentru a solicita un împrumut, trebuie să completați un formular de
+            pe site-ul proiectului. Atunci când efectuați orice acțiune pe site,
+            trebuie să vă furnizați Consimțământul pentru prelucrarea datelor cu
+            caracter personal și Consimțământul pentru a primi materiale
+            publicitare. Ați citit și sunteți de acord cu Acordul de ofertă
+            publică. <br />
+            Cerințe pentru debitori: <br />
+            Cetatenie romana documentata; Vârsta nu mai puțin de 18 ani (în
+            unele cazuri nu mai puțin de 20 de ani) și nu mai mult de 75 de ani;
+            Numărul de telefon mobil valid al împrumutatului; Cont bancar sau
+            card activ. Există și alte modalități de a primi fonduri. Istoricul
+            dumneavoastră de credit nu influențează decizia instituțiilor de
+            credit. Alte suplimentare De asemenea, certificatele nu sunt
+            necesare pentru a depune o cerere în vederea examinării. <br />
+            Conditii pentru obtinerea unui imprumut: <br />
+            Perioada de rambursare și ratele dobânzii. Dobânda la împrumut (rata
+            dobânzii) variază de la 1 la 31 la sută pe an. Dacă termenele de
+            plată sunt încălcate, se percepe o penalitate, a cărei valoare este
+            de aproximativ 0,1% din suma restante pe zi. Toate creditele
+            prezentate pe site sunt emise pentru o perioadă de la 91 la 365 de
+            zile. <br />
+            Informații despre costul total al împrumutului și exemplu de calcul:
+            <br />
+            Dacă ați contractat un împrumut de 13.000 de lei pentru 91 de zile
+            sau mai mult cu o dobândă de 0,01% pe zi, atunci comisionul de
+            utilizare a fondurilor va fi de 0,01% pe zi, adică 1,30 de lei pe
+            zi. Rezultă că returnezi o sumă de dobândă egală cu 115 Lei, adică
+            1,30 Lei * 91 de zile. Și tot suma împrumutului este de 13.000 de
+            lei. Astfel, suma totală de rambursare este formată din suma
+            împrumutului de 13.000 și suma dobânzii acumulate pentru 91 de zile.
+            115 lei și este egal cu 14.000 lei. Perioadele minime și maxime de
+            rambursare a datoriei variază de la 91 la 365 de zile. Rata anuală
+            maximă a dobânzii, care include dobânda la împrumut și toate
+            celelalte taxe și cheltuieli pentru anul, sau o rată echivalentă
+            calculată în conformitate cu legislația locală, este de 31% pe an.
+          </div>
+          <button class="footer__main-btn1">
+            Politica de confidențialitate
+          </button>
+          <button class="footer__main-btn2" id="blockNumberOpen">
+            Numărul blocului
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="fixid__container" target="_blank">
+      Descărcați aplicația
+    </a>
+
+    <div id="cookie-notice">
+      <div class="wrapper">
+        <p>
+          Pentru a îmbunătăți performanța site-ului și experiența
+          utilizatorului, folosim cookie-uri. Continuând să utilizați site-ul,
+          permiteți utilizarea cookie-urilor și sunteți de acord cu colectarea,
+          prelucrarea și transferul datelor cu caracter personal.Pentru mai
+          multe informații, puteți oricând să dezactivați cookie-urile din
+          setările browserului dvs.
+        </p>
+        <button id="accept-cookies">ACCEPT</button>
+      </div>
+    </div>
+
+    <!-- Место для отображения сообщения об успешной отправке -->
+    <div id="calculatorModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <div id="successMessage" style="display: none">
+          <img
+            width="107"
+            height="86"
+            src="img/message-modal.svg"
+            alt="Aplicația ta este acceptată!"
+          />
+          <h3>
+            Aplicația ta este <br />
+            acceptată!
+          </h3>
+          <p>Consultați cele mai bune oferte de împrumut!</p>
+          <button id="closeModalBtn"> Mergi</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно, вход в аккаунт -->
+    <div id="sign" class="sign" style="display: none">
+      <div id="signMessage">
+        <button id="closeSignBtn" onclick="closeSignBtn()">
+          <img src="img/close.svg" alt="close" />
+        </button>
+        <form action="">
+          <div class="name__block">
+            <input
+              type="text"
+              name="login"
+              id="login"
+              placeholder="Login"
+              required
+            />
+            <span class="error"
+              >A avut loc o eroare. Vă rugăm să încercați din nou</span
+            >
+          </div>
+          <div class="form__pass name__block">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Parolă"
+            />
+            <button class="form__pass-btn" onclick="showPassword(event)">
+              <img src="img/Union.svg" alt="show Password" />
+            </button>
+            <span class="error"
+              >A avut loc o eroare. Vă rugăm să încercați din nou</span
+            >
+          </div>
+          <input
+            type="submit"
+            value="Intra"
+            class="signMessage-btn"
+            onclick="closeSignBtn()"
+          />
+        </form>
+      </div>
+    </div>
+
+    <!-- Модальное окно, блокировка номера -->
+    <div id="blockNumber" class="block__number" style="display: none">
+      <div id="blockNumberMessage">
+        <button id="closeBlockBtn" onclick="closeBlockBtn()">
+          <img src="img/close.svg" alt="close" />
+        </button>
+        <form action="">
+          <input
+            type="tel"
+            name="tel"
+            id="tel"
+            placeholder="+40(000)-000-00-00"
+          />
+          <div class="block__number-reca">
+            <img src="img/reca2.png" alt="" />
+          </div>
+          <input
+            type="submit"
+            value="Trimite"
+            class="signMessage-btn"
+            onclick="closeBlockBtn()"
+          />
+        </form>
+      </div>
+    </div>
+
+    <script src="script/jquery-3.7.0.min.js"></script>
+    <script src="script/jquery.maskedinput.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.5/build/js/intlTelInput.min.js"></script>
+    <script>
+      const input = document.querySelector("#phone");
+      window.intlTelInput(input, {
+        utilsScript:
+          "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.5/build/js/utils.js",
+      });
+    </script>
+    <script src="script/script.js"></script>
+
+    <script>
+      $("#tel").mask("+40(099) 999-99-99");
+    </script>
+  </body>
+</html>
