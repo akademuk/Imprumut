@@ -81,8 +81,6 @@ function updateSummary() {
     rangePercent = Math.round(rangePercent);
     rangeInput.style.setProperty('--rangePercent', rangePercent + '%');
 }
-
-
 const slider = document.getElementById("range");
 const min = slider.min;
 const max = slider.max;
@@ -103,3 +101,18 @@ function changeRange(delta) {
     rangeInput.style.background = `linear-gradient(to right, #5251CC 0%, #5251CC ${(newValue - parseInt(rangeInput.min)) / (parseInt(rangeInput.max) - parseInt(rangeInput.min)) * 100}%, #BCCAFC ${(newValue - parseInt(rangeInput.min)) / (parseInt(rangeInput.max) - parseInt(rangeInput.min)) * 100}%, #BCCAFC 100%)`;
     updateSummary();
 }
+
+
+
+// Плавный переход к якорю 
+jQuery(document).ready(function ($) {
+	$('a[href^="#"]').on('click', function (event) {
+		event.preventDefault();
+		var target = $(this.hash);
+		if (target.length) {
+			$('html, body').animate({
+				scrollTop: target.offset().top
+			}, 800);
+		}
+	});
+});

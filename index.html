@@ -18,7 +18,9 @@
   </head>
 
   <body>
-    <header class="header">
+    <button class="solicitarea__btn">Sus</button>
+    
+    <header class="header" id="header">
       <div class="wrapper">
         <a href="#">
           <img src="img/Logo.svg" alt="Швидкий кредит" />
@@ -68,12 +70,17 @@
                   >A avut loc o eroare. Vă rugăm să încercați din nou</span
                 >
                 <input type="text" name="imię" id="name" placeholder="imię" />
-                <input
+                <div class="phone__container">
+                  <div class="phone__container-img">
+                      <img src="img/Flag.svg" alt="Flag">
+                  </div>
+                  <input
                   type="tel"
                   name="phone"
                   id="phone"
                   placeholder="(000) 000-00-00"
                 />
+                </div>
                 <div class="recaptcha">
                   <img src="img/recaptcha.png" alt="recaptcha" />
                 </div>
@@ -172,7 +179,7 @@
             <p>
               Și obțineți un împrumut online pe cardul dvs. cu un singur clic
             </p>
-            <button>A LUA BANI!</button>
+            <a href="#header">A LUA BANI!</a>
           </div>
           <div class="aplica__right">
             <img width="383" height="354px" src="img/Groshi.png" alt="Groshi" />
@@ -242,7 +249,6 @@
                 <a href="mailto:">info@fastmoney-ro.com</a>
               </address>
             </div>
-            <button class="solicitarea__btn">Sus</button>
           </div>
         </div>
       </section>
@@ -451,19 +457,11 @@
 
     <script src="script/jquery-3.7.0.min.js"></script>
     <script src="script/jquery.maskedinput.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.5/build/js/intlTelInput.min.js"></script>
-    <script>
-      const input = document.querySelector("#phone");
-      window.intlTelInput(input, {
-        utilsScript:
-          "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.5/build/js/utils.js",
-      });
-    </script>
     <script src="script/script.js"></script>
 
     <script>
       $("#tel").mask("+40(099) 999-99-99");
-      $("#phone").mask("+40(099) 999-99-99");
+      $("#phone").mask("(999) 999-99-99");
     </script>
   </body>
 </html>
