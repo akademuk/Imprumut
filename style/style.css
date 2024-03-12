@@ -619,6 +619,7 @@ input[type="range"]::-moz-range-thumb {
     bottom: 90px;
     right: 20px;
     z-index: 8;
+    text-decoration: none;
 }
 
 .footer {

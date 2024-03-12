@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <button class="solicitarea__btn">Sus</button>
+    <button class="solicitarea__btn" onclick="scrollToTop()">Sus</button>
     
     <header class="header" id="header">
       <div class="wrapper">
@@ -462,6 +462,16 @@
     <script>
       $("#tel").mask("+40(099) 999-99-99");
       $("#phone").mask("(999) 999-99-99");
+    </script>
+
+    <script>
+      function scrollToTop() {
+          // Получаем корневой элемент (обычно это <html>)
+          const rootElement = document.documentElement;
+
+          // Используем метод scrollIntoView с параметром behavior: 'smooth'
+          rootElement.scrollIntoView({ behavior: 'smooth' });
+      }
     </script>
   </body>
 </html>
