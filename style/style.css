@@ -1274,7 +1274,7 @@ input:required {
         background: #fff;
     }
     .hero__calculator {
-        padding: 24px 9px 17px 9px;
+        padding: 24px 9px 24px 9px;
     }
     .form__result-box {
         padding-right: 4px;
@@ -1354,6 +1354,7 @@ input:required {
     }
     .form__data p {
         width: 50%;
+        margin-bottom: 16px;
     }
     #formBtn {
         height: 41px;
